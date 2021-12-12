@@ -1,0 +1,48 @@
+
+ALTER TABLE `user`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+-------------------------------------------------------------------------
+
+ALTER TABLE `reservation` MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+ALTER TABLE `reservation` ADD FOREIGN KEY(customer_id) REFERENCES user(id) ON DELETE CASCADE;
+ALTER TABLE `reservation` ADD FOREIGN KEY(provider_id) REFERENCES user(id) ON DELETE CASCADE;
+-------------------------------------------------------------------------
+
+ALTER TABLE `rating_as_customer` MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+ALTER TABLE `rating_as_customer` ADD FOREIGN KEY(customer_id) REFERENCES user(id) ON DELETE CASCADE;
+ALTER TABLE `rating_as_customer` ADD FOREIGN KEY(reservation_id) REFERENCES reservation(id) ON DELETE CASCADE;
+----------------------------------------------------------------------------------
+
+ALTER TABLE `rating_as_provider` MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+ALTER TABLE `rating_as_provider` ADD FOREIGN KEY(provider_id) REFERENCES user(id) ON DELETE CASCADE;
+ALTER TABLE `rating_as_provider` ADD FOREIGN KEY(reservation_id) REFERENCES reservation(id) ON DELETE CASCADE;
+--------------------------------------------------------------------------------
+INSERT INTO `user` (`id`, `address`, `carbrand`, `carmodel`, `cellphone`, `firstname`, `grade_c`, `grade_c_times`, `grade_p`, `grade_p_times`, `lastname`, `password`, `platenumber`) 
+VALUES (NULL, '1234 Happy Drive, San Jose, 95001', 'Toyota', 'Camry', '209-1234567', 'Mary', 5.0, 1, 5.0, 1, 'Chen', '123456', '7M2SG1234');
+
+INSERT INTO `user` (`id`, `address`, `carbrand`, `carmodel`, `cellphone`, `firstname`, `grade_c`, `grade_c_times`, `grade_p`, `grade_p_times`, `lastname`, `password`, `platenumber`) 
+VALUES (NULL, '1234 Happy Drive, Modesto, 95355', 'Tesla', 'Model 3', '209-2468124', 'Xiao', 5.0, 1, 5.0, 1, 'Li', '123456', '8M2SG2468');
+
+INSERT INTO `user` (`id`, `address`, `carbrand`, `carmodel`, `cellphone`, `firstname`, `grade_c`, `grade_c_times`, `grade_p`, `grade_p_times`, `lastname`, `password`, `platenumber`) 
+VALUES (NULL, '1357 Flower Drive, San Francisco, 95200', 'Tesla', 'Model Y', '408-2468124', 'Mike', 5.0, 1, 5.0, 1, 'Wu', '123456', '6M2SG2469');
+
+INSERT INTO `user` (`id`, `address`, `carbrand`, `carmodel`, `cellphone`, `firstname`, `grade_c`, `grade_c_times`, `grade_p`, `grade_p_times`, `lastname`, `password`, `platenumber`) 
+VALUES (NULL, '2532 Flower Drive, Sacramento, 95100', 'Nissan', 'Model n', '408-7654321', 'Jeck', 5.0, 1, 5.0, 1, 'Linh', '123456', '5M2SG2412');
+
+----------------------------------------------------------------------------------
+INSERT INTO `reservation` (`id`, `available`, `customer_id`, `endcity`, `note`, `provider_id`, `startcity`, `startday`, `starttime`) 
+VALUES (NULL, true, 3, 'Los Angle', 'Please no pet.', 2, 'San Jose', '2021-10-03', '08:15');
+
+-------------------------------------------------------------------------------------
+INSERT INTO `rating_as_customer` (`id`, `customer_id`, `grade_out_of_5`, `reservation_id`) 
+VALUES (NULL, 3, 5, 1);
+
+----------------------------------------------------------------------------------------
+INSERT INTO `rating_as_provider` (`id`, `provider_id`, `grade_out_of_5`, `reservation_id`) 
+VALUES (NULL, 2, 5, 1);
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+USE database_green;
+GRANT ALL ON database_green.* TO 'user_green'@'localhost' IDENTIFIED BY 'password_green';
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&

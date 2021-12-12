@@ -1,0 +1,231 @@
+/* ------------------------------------------------------------------- */
+/* BASIC SETUP */
+/* ------------------------------------------------------------------- */
+*{
+    /*default changing*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html{
+    /*web default*/
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', 'Arial',sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    
+}
+
+/* ------------------------------------------------------------------- */
+/* REUSABLE COMPONETNS */
+/* ------------------------------------------------------------------- */
+.row{
+    /*the max width of the website is 1140px */
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+
+
+section{
+    padding: 80px 0;
+}
+
+
+.box{
+    padding: 1%;
+}
+
+/* ---------------HEADINGS-------------- */
+h1,
+h2,
+h3{ 
+    /*to prevent the whithespace between the header & top-page */
+    font-weight: 300;
+    text-transform: uppercase;
+    
+}
+
+h1{
+    margin: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 240%;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+}
+
+h2{
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+}
+
+
+h2:after{
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+    
+}
+
+h3{
+    font-size: 110%;
+    margin-bottom: 15px;
+}
+
+/* ---------------PARAGRAPHS-------------- */
+
+.long-copy{
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%;
+    
+}
+
+.box p{
+    font-size: 90%;
+    line-height: 145%;
+    
+}
+
+
+/* ---------------ICONS-------------- */
+ion-icon{
+    font-size: 300%;
+    display: block;
+    color: #374B4A;
+    margin-bottom: 10px;
+}
+
+
+
+/* ---------------BUTTONS-------------- */
+.btn:link,
+.btn:visited {
+    display: inline-block;
+    padding: 10px 40px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    color: #fff;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn-full:link,
+.btn-full:visited {
+    background-color: #374B4A;
+    border: 1px solid #374B4A;
+    color: #fff;
+    margin-right: 20px;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+    border: 1px solid #374B4A;
+    color: #e67e22;
+}
+
+
+/*what will happen when we put the mouse on/ click the buttom  */
+.btn:hover,
+.btn:active {
+    background-color: #374B4A;
+}
+
+.btn-full:hover,
+.btn-full:active {
+    border: 1px solid #374B4A;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+    border: 1px solid #374B4A;
+    color: #fff;
+}
+
+
+/* ------------------------------------------------------------------- */
+/* HEADER */
+/* ------------------------------------------------------------------- */
+
+
+
+header{
+    /* linear-gradient(#000,#000) making the image darker */
+    background-image:url(/images/background.png);
+    
+    background-size: cover;
+    background-position: center;
+    
+    /* vh: viewpoint  the whole page that you will see */
+    height: 100vh;
+    
+}
+
+.hero-text-box{
+    /*text on the hero image*/
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo{
+    height: 100px;
+    width: auto;
+    float: left;
+    margin-top: 20px;
+}
+
+.main-nav{
+    float: right;
+    list-style: none;
+    margin-top: 55px;
+    
+}
+
+.main-nav li{
+    display: inline-block;
+    margin-left: 40px;
+    
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 100%;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom, 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #374B4A;
+    
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+
+
+

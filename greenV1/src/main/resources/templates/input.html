@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>New Trip</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" href="../static/css/bootstrap.min.css">
+    <!--from temp-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" th:href="@{/css/styleee.css}"  href="../static/css/styleee.css">
+    <!--from temp-->
+</head>
+<body>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="wrapper">
+                    <div class="row no-gutters">
+                        <div class="col-lg-6">
+                            <div class="contact-wrap w-100 p-md-5 p-4">
+                                <h3>Start A New Trip</h3>
+                                <p class="mb-4">Add A New Reservation Here</p>
+
+
+                                <!--<div id="form-message-warning" class="mb-4"></div>
+                          <div id="form-message-success" class="mb-4">
+                        Your message was sent, thank you!
+                          </div>-->
+
+
+
+                                <form action="#" th:action =" @{/reservations}" th:object="${reservation}" method="POST" id="contactForm" name="contactForm" class="contactForm">
+                                    <input type="hidden" th:field="*{id}" name="id">
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <!--<label for="provider_idId">Provider Id</label>-->
+                                                <input type="hidden" name="provider_id" id="provider_idId" class="form-control" th:field="*{provider_id}">
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <!--<label for="customer_idId">Customer Id</label>-->
+                                                <input type="hidden" name="customer_id" id="customer_idId" th:field="*{customer_id}" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="startcityId">Depart City</label>
+                                                <input type="text" name="startcity" id="startcityId" th:field="*{startcity}" class="form-control" placeholder="From" required>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="endcityId">Destination</label>
+                                                <input type="text" name="endcity" id="endcityId" th:field="*{endcity}" class="form-control" placeholder="To" required>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="startdayId">Depart Day</label>
+                                                <input type="date" name="startday" id="startdayId" th:field="*{startday}" class="form-control" placeholder="Choose the day you leave" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="starttimeId">Depart Time</label>
+                                                <input type="time" name="starttime" id="starttimeId" th:field="*{starttime}" class="form-control" placeholder="Choose the time you leave" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <p>Availability</p>
+                                                <input type="radio" id="availableId1" name="available" value="true" th:field="*{available}">
+                                                <label for="availableId1">Yes, make it available!</label><br>
+                                                <input type="radio" id="availableId2" name="available" value="false" th:field="*{available}">
+                                                <label for="availableId2">Uhm, make it not available at this time. </label><br>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="noteId">Special Instruction</label>
+                                                <textarea type="text" name="note" id="noteId" th:field="*{note}" cols="30" rows="4" class="form-control" placeholder="ex: no pets, no smoking..."></textarea>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary">Submit
+                                                    <div class="submitting"></div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-flex align-items-stretch">
+                            <div class="info-wrap w-100 p-5 img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script th:src="@{/js/bootstrap.min.js}" src="../static/js/bootstrap.min.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,43 @@
+server:
+  port: 8080
+logging:
+  level:
+    root: info
+    com.zeng.lrmi: debug
+  file:
+    name: logs/debug.log
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/database_green?useUnicode=true&characterEncoding=utf-8
+    username: user_green
+    password: password_green
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+  cache:
+    type: none
+  #  thymeleaf:
+#    prefix: classpath:/templates/
+  mail:
+    host: localhost
+    port: 1025
+    username: hello
+    password: hello
+    properties:
+      mail:
+        smtp:
+          ssl:
+            trust: "*"
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
+#mvc:
+#  view:
+#    prefix: /
+#    suffix: .html

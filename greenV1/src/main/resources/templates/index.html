@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.w3.org/1999/xhtml"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">  <!-------->
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+	<title>Green</title>
+	<link rel="stylesheet" href="css/bootstrap.minv3.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/animate.min.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/morphext.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/owl.carousel.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/main.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/custom.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="css/multipage-style.css" type="text/css" media="all" />
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+<div class="noo-spinner">
+	<div class="sk-wave loader-multipage">
+		<div class="sk-rect sk-rect1"></div>
+		<div class="sk-rect sk-rect2"></div>
+		<div class="sk-rect sk-rect3"></div>
+		<div class="sk-rect sk-rect4"></div>
+		<div class="sk-rect sk-rect5"></div>
+	</div>
+</div>
+
+<!--这里右边隐藏区域（订阅） -->
+<div id="body_hider" class="hider_flag"></div>
+<div id="body_hider_full" class="hider_flag"></div>
+<div id="page-wrapper">
+	<div class="hidden-bar">
+		<div class="hidden-bar-scroller">
+			<div class="hidden-bar-inner">
+				<div class="widget widget-logo pb-1">
+					<div class="widget-inner">
+						<img src="images/Green-white.png" alt="" />
+					</div>
+				</div>
+				<div class="widget mb-6 pb-0">
+					<div class="widget-inner">
+						<p class="text-center">
+							1 Washington Sq
+							<br />San Jose, CA 95192
+						</p>
+					</div>
+				</div>
+				<div class="widget">
+					<div class="widget-inner">
+						<h3 class="widget-title header-font white">MAILING LIST</h3>
+						<p>
+							Subscribe and stay updated with the latest news
+							<br />from us. We never spam!
+						</p>
+						<form>
+							<div class="clearfix">
+								<div class="form-signup-row">
+									<label class="fw-normal">Email Address<span>*</span></label>
+									<input type="text" placeholder="Your email" name="email" id="email" class="highlighted" />
+								</div>
+								<div class="form-signup-row">
+									<label class="fw-normal">Name</label>
+									<input type="text" placeholder="Your name" name="name" id="name" class="highlighted" />
+								</div>
+								<div class="form-signup-row theme-button clearfix">
+									<input type="submit" name="signup_submit" id="signup_submit" value="SUBSCRIBE" />
+								</div>
+							</div>
+							<!-- /mc_form_inside -->
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--这里是header -->
+	<header class="header-absolute">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12 p-0">
+					<div id="header-nav" class="classic-menu">
+						<div class="header-nav-inner">
+							<div class="inner-block">
+								<div class="header-logo">
+									<div class="header-logo-holder">
+										<div class="header-logo-before">
+											<a href="/">
+												<img src="images/Green-black.png" alt="greenLogo" />
+											</a>
+										</div>
+									</div>
+								</div>
+								<div id="menu-section">
+									<nav id="nav-main">
+										<div class="nav-wrap header-font">
+											<div id="fount-top-floater">
+												<div id="menu-right-trigger" class="hidden-bar-toggle">
+													<div class="menu-bars">
+														<div class="menu-bar bar-1"></div>
+														<div class="menu-bar bar-2"></div>
+														<div class="menu-bar bar-3"></div>
+													</div>
+												</div>
+											</div>
+											<div id="menu-toggle-floater">
+												<div class="menu-toggle">
+													<div class="menu-bars">
+														<div class="menu-bar bar-1"></div>
+														<div class="menu-bar bar-2"></div>
+													</div>
+												</div>
+											</div>
+											<ul class="sf-menu sf-vertical">
+												<li class="active"><a href="/">HOME</a></li>
+												<li><a href="#footer">CONTACT US</a></li>
+												<li class="menu-item-has-children">
+													<a href="#">TRIPS</a>
+													<ul class="sub-menu">
+														<li><a href="/reservations/p">HOSTED TRIPS</a></li>
+														<li><a href="/reservations/c">SHARED TRIPS</a></li>
+													</ul>
+												</li>
+												<li class="menu-item-has-children">
+													<a href="#">ACCOUNT</a>
+													<ul class="sub-menu">
+														<li sec:authorize="!isAuthenticated()"><a href="/login">SIGN IN</a></li>
+														<li sec:authorize="isAuthenticated()"><a href="/user/dt">PROFILE</a></li>
+														<li sec:authorize="isAuthenticated()"><a href="/logout">LOG OUT</a></li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</nav>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div id="main">
+		<div id="fullscreen-banner" class="section">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-12 p-0">
+						<div class="item big fount-banner">
+							<div class="slider-text-holder header-font sld-center sld-v-center">
+								<div class="pull-left headings-top white">
+									<div class="colored-slider">
+										<div class="cd-headline old_timey">
+											<strong>
+													<span id="js-rotating" class="cd-words-wrapper">
+														We Are Green,We Are Helping Our Earth Green,Your Small Step, Is A Big Step To Us
+													</span>
+											</strong>
+										</div>
+									</div>
+								</div>
+								<div data-wow-delay="0.3s" class="headings-body white wow fadeInUp">
+									Green, is designed to share a ride with others,
+									<br /> which saves more energy, improves efficiency, and reduces pollution.
+								</div>
+							</div>
+							<div data-wow-delay="0.3s" class="slider-scroll-button wow fadeInUp">
+								<div class="bordered-buttons theme-button mb-0">
+									<a href="#about" class="onepage">
+										GET STARTED
+									</a>
+									<div class="clearfix"></div>
+									<i class="fa fa-chevron-down white"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--这里是card setion -->
+		<div id="about" class="section bg-white pt-8 pb-5" style="background-color: #DEF7E8">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="text-center">
+							<div class="header-font double_lined mb-2">
+								<h2 class="fz-19 fw-bolder"> Find Out Where Is Your Next Stop</h2>
+							</div>
+							<div>
+								Find A Place To Visit or
+								<br />Go To The Place You Love
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--Search bar-->
+				<div class="row" style="margin-top: 50px">
+					<form action="/reservations/search" method="get" style="max-width: 64em;margin: auto;text-align: center;">
+
+						<div class="col-sm-9" style="text-align: center; margin-bottom: 20px;padding-left: 20px">
+							<div class="row">
+								<div class="col-sm-6">
+
+									<div class="form-group">
+										<input type="text" name="startcity" class="form-control" placeholder="   From" style="border-radius: 120px; height: 60px" required>
+									</div>
+
+								</div>
+
+								<div class="col-sm-6">
+
+									<div class="form-group">
+										<div>
+											<input type="text" name="endcity" class="form-control" placeholder="   To" style="border-radius: 120px; height: 60px" required>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+
+						<div class="col-sm-3" style="text-align: left">
+
+							<button type="submit" class="button" style="vertical-align:middle; height: 50px; width: 100px; margin-left: 20px; font-size: 16px; padding-left: 20px"><span>Search</span></button>
+
+						</div>
+					</form>
+
+				</div>
+			</div>
+			<div class="section bg-white pb-3">
+				<div class="container">
+					<div class="row">
+						<!--这里是card display 区域； 加进我们原来的那部分html -->
+						<!-------->
+						<div class="col-sm-6" th:each="reservation,iterStat:${reservations}" style="margin-bottom: 20px ">
+							<div class="card bg-light text-white">
+								<div class="card-body" style="background-color: #D3EEDC" >
+									<div class="col-sm-4" style="margin-bottom: 22px; margin-top: 10px">
+										<p th:text="${reservation.startcity}" style="font-weight: 900; font-size: 150%"> From </p>
+									</div>
+									<div class="col-sm-4" style="margin-bottom: 22px; margin-top: 10px">
+										<div class="center" style="text-align:center"><i style='font-size:25px ' class='fas'>&#xf101;</i></div>
+									</div>
+
+									<div class="col-sm-4 text-right" style="margin-bottom: 22px; margin-top: 10px">
+										<p th:text="${reservation.endcity}" style="font-weight: 900; font-size: 150%"> To </p>
+									</div>
+
+									<div class="col-sm-6">
+										<p th:text="${reservation.startday}" style="font-weight: 500; font-size: 120%"> Date </p>
+									</div>
+									<div class="col-sm-6 text-right">
+										<p th:text="${reservation.starttime}" style="font-weight: 500; font-size: 120%"> Time </p>
+									</div>
+									<a th:href="@{/reservations/{id}(id=${reservation.id})}" class="stretched-link"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-------->
+				</div>
+			</div>
+		</div>
+
+		<!--这里是顾客review -->
+		<div class="section text-center pt-7 pb-7 section-bg-3">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="header-font double_lined mb-4">
+							<h2 class="white fz-19 fw-bolder">CLIENT'S TALK</h2>
+						</div>
+						<div class="owl-carousel testimonials_slider text-center mb-6" data-autoplay="true" data-delay="5500" data-pagination="true" data-touch="false">
+							<!--第一个review 注意头像放男生的 -->
+							<div class="item">
+								<img src="images/avatar/avatar-1.jpg" class="testimonial_image" alt="" />
+								<div class="tm_content mt-2">
+									<h4 class="white">
+										"I really like Green which saved me tons of time and I made couples friends thought it.<br/>They highlighted my bored trip and now I am absolutely a fan of Green.</br\>"
+									</h4>
+									<div class="tm_title fw-bolder header-font">Marlon Liu</div>
+									<div class="tm_subheading header-font white">SJSU Student</div>
+									<div class="tm_stars">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+									</div>
+								</div>
+							</div>
+							<!--第二个review 头像换女生的 -->
+							<div class="item">
+								<img src="images/avatar/avatar-2.jpg" class="testimonial_image" alt="" />
+								<div class="tm_content mt-2">
+									<h4 class="white">
+										"I have been using green for a while and it is really a good tool to keep me on the way between San Jose and Los Angeles,<br />I enjoyed my trips so much."
+									</h4>
+									<div class="tm_title fw-bolder header-font">Amber Zhou</div>
+									<div class="tm_subheading header-font white">Freelancer</div>
+									<div class="tm_stars">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+									</div>
+								</div>
+							</div>
+							<!--第三个review 头像还是放男生 -->
+							<div class="item">
+								<img src="images/avatar/avatar-3.jpg" class="testimonial_image" alt="" />
+								<div class="tm_content mt-2">
+									<h4 class="white">
+										"Highly recommend this website, I like this and I would like to share this with all my friends <br/>plus, I love the purport of this website. <br/> We all can help to reduce GHG to keep our earth green."
+									</h4>
+									<div class="tm_title fw-bolder header-font">Steven Banjaming</div>
+									<div class="tm_subheading header-font white">Photographer</div>
+									<div class="tm_stars">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-------------------------------------------------->
+		<div class="section bg-white pt-4 pb-8">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="mb-3">
+							<img src="images/spartans.png" alt="ourteam" />
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="header-font mb-2">
+							<h4 class="fw-bolder uppercase green text-shadow">Our Team.</h4>
+						</div>
+						<div class="mb-2">
+							This is our final project of CS160 at San Jose State University, we are glad to have this opportunity to work together and make this product becomes a way which can help our earth keep green.
+						</div>
+						<div class="tabs white-tabs">
+							<!-- Nav tabs -->
+							<div class="nav-tabs-wrapper">
+								<ul class="nav nav-tabs">
+									<li class="active">
+										<a href="#tab-content-1" data-toggle="tab">Catherine</a>
+									</li>
+									<li>
+										<a href="#tab-content-2" data-toggle="tab">Lin</a>
+									</li>
+									<li>
+										<a href="#tab-content-3" data-toggle="tab">Lifan</a>
+									</li>
+								</ul>
+							</div>
+							<!-- Tab panes -->
+							<div class="tab-content">
+								<div class="tab-pane active fade in" id="tab-content-1">
+									<p>
+										Hi I'm Catherine. I am a CS major student currently study at San Jose University,
+										I have some programming experience in Java, C++, Python, HTML, CSS...
+										I had a group project called makeMyURL(Java, redis, ReactJS) which was contributed in cs157c
+										I love to work with team and I am an active person in the group; I have been working with groups for several semesters.
+										Structured the project, project report, UX/UI design and front end developer.
+									</p>
+								</div>
+								<div class="tab-pane fade" id="tab-content-2">
+									<p>
+										I’m Lin Zhu, a Software Engineer studying at San Jose state university. I chose to study computer science because of the first movie that I watched when I came to the United States. It was the famous line in the Movie Blade Runner: “The alphabet of humans is from four symbols. Computers only have two: 1 and 0. Half as much yet twice as elegant.” Throughout the years that I spent at San Jose State University, I found my special interest in computer graphics. I learned and wrote my own ray tracing program and learned various algorithms. I choose computer science because of curiosity but I stay because I love the process of learning and creating. Creating things that people love and enjoy is what I always wanted to do. With me in your team, we can make the world more joyful and memorable.
+									</p>
+								</div>
+								<div class="tab-pane fade" id="tab-content-3">
+									<p>
+										Hello, My name is Lifan Zeng. I am a Computer Science major student graduating soon from San Jose State University. I will graduate in Spring 2022. Now I am seeking jobs and internships.
+
+										I’m captivated by the effects of computer science on improving the world. As a result, I’ve taken many courses in object-oriented design, full stack programming, and Android development. I hope I can use my computer knowledge to bring convenience and pleasure to people’s lives.
+
+										To see more information about me, please visit my LinkedIn account: https://www.linkedin.com/in/lifan-zeng-380bb7194/
+
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-------------------------------------------------->
+
+		<div class="section bg-color pt-4 pb-4">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="text-center">
+							<a class="white fz-20" href="#" target="_blank">Do you any question? Concat us now!</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer" class="section reveal">
+		<div class="footer-inner">
+			<div class="footer-top">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-sm-6">
+							<div class="widget mt-5">
+								<div class="widget-inner">
+									<div class="widget-title header-font">Contact Information</div>
+									<p>Please contact us if you have any question.</p>
+									<div class="fount_vcard mb-2">
+										<div class="fount_vcard_block mb-1">
+											<i class="fa fa-map-marker fount_address_icon fz-14"></i>
+											<div class="fount_after_vcard_icon default_color header-font">
+												1 Washington Sq, San Jose, CA 95192
+											</div>
+										</div>
+										<div class="fount_vcard_block mb-1">
+											<i class="fa fa-phone fount_address_icon fz-14"></i>
+											<div class="fount_after_vcard_icon default_color header-font">
+												+1 (669) 200 7170
+											</div>
+										</div>
+										<div class="fount_vcard_block mb-1">
+											<i class="fa fa-clock-o fount_address_icon fz-14"></i>
+											<div class="fount_after_vcard_icon default_color header-font">
+												Monday to Friday - 9 PM to 18 PM
+											</div>
+										</div>
+										<div class="fount_vcard_block mb-1">
+											<i class="fa fa-envelope fount_address_icon fz-14"></i>
+											<div class="fount_after_vcard_icon header-font">
+												<a class="default_color" href="mailto:email@domain.com">
+													xin.lin.lifan@sjsu@.edu
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-6">
+							<div class="widget mt-5">
+								<div class="widget-inner">
+									<div class="widget-title header-font text-shadow">Mailing List</div>
+									<p>Subscribe and stay updated with the latest news from us. We never spam!</p>
+									<form>
+										<div class="clearfix">
+											<div class="form-signup-row">
+												<label class="fw-normal">Email<span>*</span></label>
+												<input type="text" placeholder="Your email" name="email" id="footer-email" class="highlighted" />
+											</div>
+											<div class="form-signup-row">
+												<label class="fw-normal">Name</label>
+												<input type="text" placeholder="Your name" name="name" id="footer-name" class="highlighted" />
+											</div>
+											<div class="form-signup-row theme-button clearfix">
+												<input type="submit" name="signup_submit" id="footer-signup_submit" value="SUBSCRIBE" />
+											</div>
+										</div>
+										<!-- /mc_form_inside -->
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="copyright" class="copyright pb-3">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="simple_line mt-5 mb-3"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+							2021 - All Rights Reserved.
+						</div>
+						<div class="col-sm-6 text-right">
+							Proudly developed by Green.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="fount-to-top" class="prk_radius">
+		<i class="fa fa-arrow-up"></i>
+	</div>
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.minv3.js"></script>
+<script type="text/javascript" src="js/jquery.singlePageNav.js"></script>
+<script type="text/javascript" src="js/modernizr.min.js"></script>
+<script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+<script type="text/javascript" src="js/jquery.isotope.init.js"></script>
+<script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
+<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="js/classie.js"></script>
+<script type="text/javascript" src="js/superfish.min.js"></script>
+<script type="text/javascript" src="js/supersubs.js"></script>
+<script type="text/javascript" src="js/jquery.countTo.js"></script>
+<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="js/waypoints.min.js"></script>
+<script type="text/javascript" src="js/wow.min.js"></script>
+<script type="text/javascript" src="js/morphext.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</body>
+
+</html>
